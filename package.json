@@ -1,0 +1,11 @@
+{
+  "name": "aesop-candidate-test",
+  "version": "1.0.0",
+  "description": "This project will offer some tests to the candidates for Aesop, to prove their skills and creativity",
+  "main": "server.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Aesop Agency",
+  "license": "ISC"
+}
