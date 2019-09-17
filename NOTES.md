@@ -6,20 +6,17 @@ Please, remember to open a new branch off from the `master` branch for each exer
 
 ## 1. Research & Development
 
-Did you search for something specific online? If so, comment below the resources used:
+Did you search for something specific online? If so, detail below the resources used:
 
 - https://...
 - https://...
 
-Have you resolved the exercise without looking anything online? Was that because you done something similar in the past?
+Did you resolve the exercise without looking at anything online? Was that because you done something similar in the past?
 
 ## 2. Personal Considerations
 
-There are any comments you want to add on top of your submission? 
-Did you find something challenging? 
-Did you learned something new in the process?
+Are there any other comments you would like to add to your submission? Did you find anything challenging? Did you learn anything new in the process?
 
 ## 3. Review and Optimisation
 
-If you were to review your code (or the code you have already found in this repository) would you have any suggested changes to improve it? 
-Would have you done your exercises differently?
+If you were to review your code (or the code you have found in the repository) would you have any suggestions to improve it? Would you have done your exercises differently?

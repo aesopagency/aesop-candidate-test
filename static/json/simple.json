@@ -1,0 +1,36 @@
+[
+  {
+    "_type": "heading",
+    "attributes": {
+      "id": "welcome",
+      "classes": "bg-black text-white",
+      "tag": "h3" 
+    },
+    "data": "Welcome to your JSON exercise!"
+  },
+  {
+    "_type": "paragraph",
+    "attributes": {
+      "id": "",
+      "classes": ""
+    },
+    "data": "This page should render this handy paragraphs coming from a JSON files here, next you can find a placeholder image below!"
+  },
+  {
+    "_type": "image",
+    "attributes": {
+      "id": "",
+      "classes": "img-fluid",
+      "src": "https://placehold.it/1024x512"
+    },
+    "data": ""
+  },
+  {
+    "_type": "paragraph",
+    "attributes": {
+      "id": "",
+      "classes": ""
+    },
+    "data": "Lorem ipsum dolor sit amet!"
+  }
+]

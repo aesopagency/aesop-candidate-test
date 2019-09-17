@@ -1,3 +1,4 @@
+/* eslint-disable max-len */
 import React from 'react'
 import Link from 'next/link'
 import Head from 'next/head'
@@ -11,80 +12,39 @@ const Home = () => (
 
     <Nav />
 
-    <div className='hero'>
-      <h1 className='title'>Welcome to Next.js!</h1>
-      <p className='description'>
-        To get started, edit <code>pages/index.js</code> and save to reload.
+    <div className="hero">
+      <h1 className="heading">Welcome to the Aesop assessment test</h1>
+      <p className="description">
+        To get started, follow the readme and choose one of the exercises below.
       </p>
 
-      <div className='row'>
-        <Link href='https://github.com/zeit/next.js#setup'>
-          <a className='card'>
-            <h3>Getting Started &rarr;</h3>
-            <p>Learn more about Next.js on GitHub and in their examples.</p>
+      <div className="row">
+        <Link href="/dancing-element">
+          <a className="card">
+            <h3>1. Dancing Element &rarr;</h3>
+            <p>
+              The designer gave you a video reference to build a web component, can you replicate it?
+            </p>
           </a>
         </Link>
-        <Link href='https://github.com/zeit/next.js/tree/master/examples'>
-          <a className='card'>
-            <h3>Examples &rarr;</h3>
-            <p>Find other example boilerplates on the Next.js GitHub.</p>
+        <Link href="/json-parsing">
+          <a className="card">
+            <h3>2. JSON Parsing &rarr;</h3>
+            <p>
+              Our third-party partner gave us access to their JSON feed, they would like to have a frontend working through it.
+            </p>
           </a>
         </Link>
-        <Link href='https://github.com/zeit/next.js'>
-          <a className='card'>
-            <h3>Create Next App &rarr;</h3>
-            <p>Was this tool helpful? Let us know how we can improve it!</p>
+        <Link href="/troubleshoot">
+          <a className="card">
+            <h3>3. Troubleshoot existing code &rarr;</h3>
+            <p>
+              Sometimes you will need to dig through someone&apos;s else code, can you identify the problems and solve them?
+            </p>
           </a>
         </Link>
       </div>
     </div>
-
-    <style jsx>{`
-      .hero {
-        width: 100%;
-        color: #333;
-      }
-      .title {
-        margin: 0;
-        width: 100%;
-        padding-top: 80px;
-        line-height: 1.15;
-        font-size: 48px;
-      }
-      .title,
-      .description {
-        text-align: center;
-      }
-      .row {
-        max-width: 880px;
-        margin: 80px auto 40px;
-        display: flex;
-        flex-direction: row;
-        justify-content: space-around;
-      }
-      .card {
-        padding: 18px 18px 24px;
-        width: 220px;
-        text-align: left;
-        text-decoration: none;
-        color: #434343;
-        border: 1px solid #9b9b9b;
-      }
-      .card:hover {
-        border-color: #067df7;
-      }
-      .card h3 {
-        margin: 0;
-        color: #067df7;
-        font-size: 18px;
-      }
-      .card p {
-        margin: 0;
-        padding: 12px 0 0;
-        font-size: 13px;
-        color: #333;
-      }
-    `}</style>
   </div>
 )
 
