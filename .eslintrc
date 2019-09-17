@@ -21,7 +21,8 @@
       "alias": [
         ["exercises", "./exercises"],
         ["components", "./components"],
-        ["pages", "./pages"]
+        ["pages", "./pages"],
+        ["styles", "./styles"]
       ]
     }
   },
@@ -29,6 +30,7 @@
     "react"
   ],
   "rules": {
+    "react/jsx-props-no-spreading": "off",
     "react/jsx-filename-extension": "off",
     "jsx-a11y/anchor-is-valid": "off",
     "global-require": "off",

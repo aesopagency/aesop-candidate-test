@@ -1,9 +1,6 @@
 import React, { Component } from 'react'
-import * as THREE from 'three'
-import { TrackballControls } from 'three/examples/jsm/controls/TrackballControls'
-import { EffectComposer } from 'three/examples/jsm/postprocessing/EffectComposer'
-import { RenderPass } from 'three/examples/jsm/postprocessing/RenderPass'
-import { UnrealBloomPass } from 'three/examples/jsm/postprocessing/UnrealBloomPass'
+
+import './style.scss'
 
 const COLORS = {
   NORMAL: 0xffffff, // WHITE
@@ -11,12 +8,8 @@ const COLORS = {
   LIGHT_2: 0x201148, // DEEPBLUE (32,17,72)
 }
 
-const BLOOM = {
-  ANIMATE: true,
-  EXP: 1,
-  STR: 1,
-  THRES: 0,
-  RAD: 0.2,
+const CUBE = {
+  ROTATION: true,
 }
 
 export default class TroubleshootExercise extends Component {
@@ -27,26 +20,32 @@ export default class TroubleshootExercise extends Component {
   }
 
   componentDidMount() {
+    const THREE = require('three')
+    const { TrackballControls } = require('three/examples/jsm/controls/TrackballControls')
+    const { EffectComposer } = require('three/examples/jsm/postprocessing/EffectComposer')
+    const { RenderPass } = require('three/examples/jsm/postprocessing/RenderPass')
+    const { UnrealBloomPass } = require('three/examples/jsm/postprocessing/UnrealBloomPass')
+
     const scene = new THREE.Scene()
     const camera = new THREE.PerspectiveCamera(
       75,
       window.innerWidth / window.innerHeight,
       0.1,
-      5000,
+      1000,
     )
 
-    camera.position.x = -1500
-    camera.position.z = 1500
+    camera.position.x = -350
+    camera.position.z = 350
     this.renderer = new THREE.WebGLRenderer()
     this.renderer.setClearColor(0x222222, 0)
 
     this.renderer.setSize(window.innerWidth, window.innerHeight)
     document.body.appendChild(this.renderer.domElement)
 
-    const controls = new TrackballControls(camera, this.renderer.domElement)
+    const controls = new TrackballControls(camera)
     controls.target = scene.position
-    controls.minDistance = 800
-    controls.maxDistance = 2000
+    controls.minDistance = 250
+    controls.maxDistance = 350
 
     // Background
     const background = new THREE.Mesh(
@@ -59,7 +58,7 @@ export default class TroubleshootExercise extends Component {
     scene.add(background)
 
     // Lights
-    const light = new THREE.AmbientLight(0x8)
+    const light = new THREE.AmbientLight(0x333333)
     scene.add(light)
 
     const l1 = new THREE.PointLight(COLORS.LIGHT_1, 0.5)
@@ -74,9 +73,9 @@ export default class TroubleshootExercise extends Component {
 
     // Cube mesh
     const cube = new THREE.Mesh(
-      new THREE.CubeGeometry(350),
+      new THREE.BoxGeometry(100, 100, 100),
       new THREE.MeshStandardMaterial({
-        color: COLORS.LIGHT_2,
+        color: COLORS.NORMAL,
       }),
     )
     scene.add(cube)
@@ -90,9 +89,9 @@ export default class TroubleshootExercise extends Component {
       0.85,
     )
 
-    bloomPass.threshold = BLOOM.THRES
-    bloomPass.strength = BLOOM.STR
-    bloomPass.radius = BLOOM.RAD
+    bloomPass.threshold = 0
+    bloomPass.strength = 0.5
+    bloomPass.radius = 1
 
     const composer = new EffectComposer(this.renderer)
 
@@ -109,10 +108,6 @@ export default class TroubleshootExercise extends Component {
       l2.position.x = Math.sin(time) * -2000
       l2.position.y = Math.cos(time) * -2000
       l2.position.z = Math.cos(Math.sin(time)) * -2000
-
-      // if (arc170 && arc170.rotation) {
-      //   arc170.rotation.y = Math.cos(time) / 2
-      // }
 
       controls.update()
       composer.render()
@@ -134,20 +129,18 @@ export default class TroubleshootExercise extends Component {
     window.addEventListener('resize', onWindowResize, false)
 
     // Adds GUI stuff
-    const dat = require('dat.gui');
+    const dat = require('dat.gui')
 
     this.gui = new dat.GUI({
       width: 340,
     })
     this.gui.useLocalStorage = true
 
-    const guiBloom = this.gui.addFolder('Rotation')
-    guiBloom.add(this.renderer, 'toneMappingExposure', 0, 1).step(0.001).name('Exposure').listen()
-    guiBloom.add(bloomPass, 'threshold', 0, 2).step(0.001).name('Cut threshold')
-    guiBloom.add(bloomPass, 'strength', 0, 2).step(0.1).name('Strength').listen()
-    guiBloom.add(bloomPass, 'radius', 0, 2).step(0.1).name('Radius').listen()
-    guiBloom.add(BLOOM, 'ANIMATE').name('Animate rotation')
-    guiBloom.open()
+    this.gui.add(cube.rotation, 'x', 0, 360).step(0.1).name('X axis').listen()
+    this.gui.add(cube.rotation, 'y', 0, 360).step(0.1).name('Y axis').listen()
+    this.gui.add(cube.rotation, 'z', 0, 360).step(0.1).name('Z axis').listen()
+    this.gui.add(CUBE, 'ROTATION').name('Animate rotation')
+    this.gui.open()
   }
 
   componentWillUnmount() {

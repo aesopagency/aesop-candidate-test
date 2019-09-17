@@ -19,7 +19,8 @@ To start working run the usual commands in your terminal:
 - `npm install` to install the dependencies 
 - `npm start` to start the project
 
-You must have nodejs >12 installed on your machine in order to run these commands.
+The project has been set up and tested on nodejs version 12.10.
+
 The repository is a generic scaffolding of the Nextjs/React framework created through the `create-next-app` utility, you shouldn’t be involved in changing the basic things and your exercises are self contained in their files, but if you require need any documentation you can [find it here](https://github.com/zeit/next.js).
 
 After reading the exercises estimate the time needed for the task you have picked (or all of them), set yourself a time limit which you feel confident with, set an alarm on your computer or phone and start working on the exercise.
@@ -104,7 +105,7 @@ The last exercise is a 3D scene built on top of [three.js](https://threejs.org/)
 
 The 3D scene has few issues, your users submit these issues on your bug tracker:
 
-- "Whenever I click the slider on the control panel it will get stuck resizing itself following my cursor or until I reload the page"
+- "Whenever I click the slider or 'Close Controls' on the control panel it will get stuck resizing itself following my cursor or until I reload the page"
 - "The rotation parameters on the control panel do not work correctly, if I slide the axis to 90 degrees it doesn't look like it's rotating 90 degrees"
 - "I tried to click on the 'Animate rotation' check box but the rotation isn't animating as it should"
 
@@ -115,4 +116,5 @@ Document your findings and add any comments of your research on the `NOTES.md` f
 ## Send the project to review
 
 To submit your exercises for a code review please open up a Pull Request from your forked repo to our original one.
+
 If you forked through the Github web dashboard as instructed at the start of this document then you should be prompted from the web dashboard to open a Pull Request pointing the parent repository.
