@@ -34,8 +34,9 @@ export default class TroubleshootExercise extends Component {
       1000,
     )
 
-    camera.position.x = -350
+    camera.position.x = 350
     camera.position.z = 350
+    camera.position.y = 350
     this.renderer = new THREE.WebGLRenderer()
     this.renderer.setClearColor(0x222222, 0)
 
@@ -69,8 +70,6 @@ export default class TroubleshootExercise extends Component {
     l2.position.set(0, 200, 200)
     scene.add(l2)
 
-    camera.position.z = -120
-
     // Cube mesh
     const cube = new THREE.Mesh(
       new THREE.BoxGeometry(100, 100, 100),
@@ -79,6 +78,12 @@ export default class TroubleshootExercise extends Component {
       }),
     )
     scene.add(cube)
+
+    // Visual helpers
+    const box = new THREE.BoxHelper(cube, 0xffff00)
+    scene.add(box)
+    const axesHelper = new THREE.AxesHelper(120)
+    scene.add(axesHelper)
 
     // Post processing
     const renderPass = new RenderPass(scene, camera)
