@@ -1,11 +1,24 @@
 {
   "name": "aesop-candidate-test",
-  "version": "1.0.0",
-  "description": "This project will offer some tests to the candidates for Aesop, to prove their skills and creativity",
-  "main": "server.js",
-  "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
-  },
   "author": "Aesop Agency",
-  "license": "ISC"
+  "description": "This project will offer some tests to the candidates for Aesop, to prove their skills and creativity",
+  "version": "0.1.0",
+  "private": true,
+  "scripts": {
+    "build": "next build",
+    "start": "npm run start:dev",
+    "start:dev": "next dev",
+    "start:production": "next start"
+  },
+  "dependencies": {
+    "@zeit/next-sass": "^1.0.1",
+    "next": "9.0.5",
+    "node-sass": "^4.12.0",
+    "react": "16.9.0",
+    "react-dom": "16.9.0"
+  },
+  "license": "ISC",
+  "devDependencies": {
+    "path": "^0.12.7"
+  }
 }
