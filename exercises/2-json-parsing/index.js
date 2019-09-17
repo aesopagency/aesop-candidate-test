@@ -10,14 +10,10 @@ const JsonParsingExercise = (props) => {
       {
         data.map((item, index) => {
           const key = `${item._type}-${index}`
-          console.log(item)
 
           return <Serializer key={key} data={item} />
         })
       }
-      <hr />
-      <p>For extra debbugging comodity you can look at the incoming JSON below</p>
-      <pre>{JSON.stringify(data, null, 2)}</pre>
     </>
   )
 }

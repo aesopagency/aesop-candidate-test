@@ -6,15 +6,20 @@
       "classes": "",
       "tag": "script" 
     },
-    "data": "alert('Whoops, you opened your site to a potential XSS attack!')"
+    "data": "document.body.style = 'background-color: red'; alert('Whoops, you opened your site to a potential XSS attack!');"
   },
   {
     "_type": "paragraph",
     "attributes": {
       "id": "",
-      "classes": "undefined"
+      "classes": null
     },
-    "data": "undefined"
+    "data": null
+  },
+  {
+    "attributes": {
+      "id": ""
+    }
   },
   {
     "_type": "paragraph",
@@ -29,5 +34,11 @@
       "": ""
     },
     "data": ""
+  },
+  {
+    "_type": null,
+    "attributes": {
+      "id": ""
+    }
   }
 ]
