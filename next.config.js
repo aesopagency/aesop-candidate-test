@@ -8,6 +8,7 @@ module.exports = withSass({
   webpack: function (config, { isServer }) {
     config.resolve.alias.components = path.resolve(__dirname, 'components')
     config.resolve.alias.pages = path.resolve(__dirname, 'pages')
+    config.resolve.alias.exercises = path.resolve(__dirname, 'exercises')
 
     return config
   }
