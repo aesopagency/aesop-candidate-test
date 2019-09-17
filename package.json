@@ -13,6 +13,7 @@
   "dependencies": {
     "@zeit/next-sass": "^1.0.1",
     "dat.gui": "^0.7.6",
+    "isomorphic-fetch": "^2.2.1",
     "next": "9.0.5",
     "node-sass": "^4.12.0",
     "react": "16.9.0",

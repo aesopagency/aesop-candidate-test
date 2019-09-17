@@ -1,0 +1,33 @@
+[
+  {
+    "_type": "heading",
+    "attributes": {
+      "id": "",
+      "classes": "",
+      "tag": "script" 
+    },
+    "data": "alert('Whoops, you opened your site to a potential XSS attack!')"
+  },
+  {
+    "_type": "paragraph",
+    "attributes": {
+      "id": "",
+      "classes": "undefined"
+    },
+    "data": "undefined"
+  },
+  {
+    "_type": "paragraph",
+    "attributes": {
+    },
+    "data": "<small>Should you trust embedded html?</small>"
+  },
+  {
+    "_type": "image",
+    "attributes": {
+      "src": "//",
+      "": ""
+    },
+    "data": ""
+  }
+]
