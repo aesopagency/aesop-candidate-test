@@ -36,14 +36,14 @@ Can you replicate the following [dancing element in this video](https://i.imgur.
 
 Here are the following specs:
 
-- The text should be Montserrat with colour #000000 
-- The element background is HSL 57/100%/50%
+- The text should be using Montserrat as a typeface with colour #000000 
+- The element background colour is HSL 57/100%/50%
 - The element wobbles back and forth in a repeat loop each second
 - The text slides in and out four times slower than the wobbly animation
 
-This is an open exercise with multiple possible solutions: you are allowed to use whatever you like or reach the quickest solution you feel more comfortable with. You can install extra libraries off from `npm` if you wish. 
+This is an open exercise with multiple possible solutions: you are allowed to use whatever you like to reach the quickest solution you feel more comfortable with. You can install extra libraries off from `npm` if you wish. 
 
-Document your findings and add any comments of your researches on the `NOTES.md` file at the end of the exercise. 
+Document your findings and add any comments of your research on the `NOTES.md` file at the end of the exercise. 
 
 ## Exercise 2: JSON Parsing
 
@@ -89,9 +89,9 @@ The scope is to find a solution on the main `Serializer` component inside the ex
 
 Do not trust the incoming JSON in any way, expect it to be malformed or with missing data so make sure you do the proper checks wherever you feel more appropriate (you can edit the sub-components if you wish to do so).
 
-Document your findings and add any comments of your researches on the `NOTES.md` file at the end of the exercise
+Document your findings and add any comments of your research on the `NOTES.md` file at the end of the exercise
 
-## Exercise 3: Troubleshooting code
+## Exercise 3: Troubleshooting existing code
 
 Your exercise folder is the following: `./exercises/3-troubleshoot/`.
 
@@ -99,11 +99,13 @@ The last exercise is a 3D scene built on top of [three.js](https://threejs.org/)
 
 The 3D scene has few issues, your users submit these issues on your bug tracker:
 
-- "Whenever I click the slider on dat.gui the control panel will resize following my cursor until I reload the page"
-- "The rotation parameters on the control panel don't work correctly, if I put 90 degrees it doesn't look like it's rotating 90 degrees"
+- "Whenever I click the slider on the control panel it will get stuck resizing itself following my cursor or until I reload the page"
+- "The rotation parameters on the control panel do not work correctly, if I slide the axis to 90 degrees it doesn't look like it's rotating 90 degrees"
 - "I tried to click on the 'Animate rotation' check box but the rotation isn't animating as it should"
 
-Document your findings and add any comments of your researches on the `NOTES.md` file at the end of the exercise
+Can you solve these issues reported from your users?
+
+Document your findings and add any comments of your research on the `NOTES.md` file at the end of the exercise
 
 ## Send the project to review
 
