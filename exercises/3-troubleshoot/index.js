@@ -1,33 +1,14 @@
 import React, { Component } from 'react'
 import * as THREE from 'three'
-import * as dat from 'dat.gui'
 import { TrackballControls } from 'three/examples/jsm/controls/TrackballControls'
 import { EffectComposer } from 'three/examples/jsm/postprocessing/EffectComposer'
 import { RenderPass } from 'three/examples/jsm/postprocessing/RenderPass'
 import { UnrealBloomPass } from 'three/examples/jsm/postprocessing/UnrealBloomPass'
 
-let gui = null
-
-const GUI = {
-  mount: () => {
-  },
-
-  unmount: () => {
-    // Flush GUI
-    if (gui !== null) {
-      gui = null
-    }
-  },
-
-  interface: () => gui,
-}
-
-export default GUI
-
 const COLORS = {
   NORMAL: 0xffffff, // WHITE
   LIGHT_1: 0xff34b3, // PURPLE (255,52,179)
-  LIGHT_2: 0x201148, // DEEPBLUE (32,17,72)  
+  LIGHT_2: 0x201148, // DEEPBLUE (32,17,72)
 }
 
 const BLOOM = {
@@ -38,7 +19,7 @@ const BLOOM = {
   RAD: 0.2,
 }
 
-export default class Troubleshoot extends Component {
+export default class TroubleshootExercise extends Component {
   constructor(props) {
     super(props)
     this.renderer = null
@@ -100,7 +81,6 @@ export default class Troubleshoot extends Component {
     )
     scene.add(cube)
 
-  
     // Post processing
     const renderPass = new RenderPass(scene, camera)
     const bloomPass = new UnrealBloomPass(
@@ -130,9 +110,9 @@ export default class Troubleshoot extends Component {
       l2.position.y = Math.cos(time) * -2000
       l2.position.z = Math.cos(Math.sin(time)) * -2000
 
-      if (arc170 && arc170.rotation) {
-        arc170.rotation.y = Math.cos(time) / 2
-      }
+      // if (arc170 && arc170.rotation) {
+      //   arc170.rotation.y = Math.cos(time) / 2
+      // }
 
       controls.update()
       composer.render()
@@ -154,6 +134,8 @@ export default class Troubleshoot extends Component {
     window.addEventListener('resize', onWindowResize, false)
 
     // Adds GUI stuff
+    const dat = require('dat.gui');
+
     this.gui = new dat.GUI({
       width: 340,
     })
