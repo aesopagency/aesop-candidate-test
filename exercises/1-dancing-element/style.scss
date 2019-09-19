@@ -1,0 +1,100 @@
+$animation-colour: hsl(57, 100%, 50%);
+$font-colour: #000000;
+$font-typeface: "Montserrat";
+
+@mixin keyframes($animationName) {
+  @-webkit-keyframes #{$animationName} {
+    @content;
+  }
+  @-moz-keyframes #{$animationName} {
+    @content;
+  }
+  @-o-keyframes #{$animationName} {
+    @content;
+  }
+  @keyframes #{$animationName} {
+    @content;
+  }
+}
+
+.dancingElement__container {
+  display: flex;
+  padding: 0;
+  position: relative;
+  overflow: hidden;
+  width: 100vw;
+  height: 100vh;
+  margin: 0 auto;
+  justify-content: center;
+  align-items: center;
+  font-size: 1vmax;  
+
+  .dancingElement__wrapper {
+   height: 100%;
+    width: 725px;
+    position: relative;
+    overflow: hidden;
+    max-width: 100%;
+    margin: 0 auto;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+
+
+.dancingElement {
+  height: 175px;
+  background: $animation-colour;
+  width: 150%;
+  position: absolute;
+  animation: wobble ease-in-out 2s infinite;
+
+  @include keyframes(wobble) {
+    0% {
+      transform: rotate(5deg);
+    }
+    50% {
+      transform: rotate(-5deg);
+    }
+    100% {
+      transform: rotate(5deg);
+    }
+  }
+
+  .dancingElement__copyContainer {
+    height: 100%;
+    max-width: 200px;
+    position: relative;
+    overflow: hidden;
+    margin: 0 auto;
+
+    .dancingElement__copy {
+      position: absolute;
+      animation: slide ease-in-out 8s infinite;
+      width: 100%;
+      text-align: center;
+
+      @include keyframes(slide) {
+        0% {
+          top: 100%;
+        }
+        50% {
+          top: -50%;
+        }
+        100% {
+          top: 100%;
+        }
+      }
+    }
+   }
+  }
+ }
+}
+
+
+
+//https://css-tricks.com/scaling-responsive-animations/
+//https://joshbroton.com/quick-fix-sass-mixins-for-css-keyframe-animations/
+//https://www.smashingmagazine.com/2016/05/fluid-typography/
+//https://webaim.org/resources/contrastchecker/
+// Spent some further consideration looking at how to make this animation accessible, the colour contrast is 17.95:1, which is great, I would limit the amount of times the animation ran and limit the size of it to less of the viewport
