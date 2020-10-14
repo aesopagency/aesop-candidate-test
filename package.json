@@ -15,7 +15,7 @@
     "dat.gui": "^0.7.6",
     "isomorphic-fetch": "^2.2.1",
     "next": "9.0.5",
-    "node-sass": "^4.12.0",
+    "node-sass": "^4.13.1",
     "react": "16.9.0",
     "react-dom": "16.9.0",
     "three": "^0.108.0"
