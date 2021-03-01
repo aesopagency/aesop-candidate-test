@@ -18,7 +18,7 @@
     "node-sass": "^4.13.1",
     "react": "16.9.0",
     "react-dom": "16.9.0",
-    "three": "^0.108.0"
+    "three": "^0.125.0"
   },
   "license": "ISC",
   "devDependencies": {
